@@ -18,3 +18,6 @@ just set up my basic outlook the first deployment
 -using railways for development
 this is how the first look of the website is
 ![image](https://github.com/user-attachments/assets/e8ec412c-214e-4b32-a422-f1844fcb4258)
+
+
+alright now lets start editing this html file to curate it to the login page
