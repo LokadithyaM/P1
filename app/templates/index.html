@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITTER.INDEX</title>
     <style>
         body {
@@ -10,7 +10,7 @@
             padding: 0;
             font-family: Arial, sans-serif;
             box-sizing: border-box;
-            background-image: url('/static/rin.jpg'); /* Placeholder image URL */
+            background-image: url('/static/rin.jpg'); /* Correct image path */
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -18,6 +18,7 @@
             justify-content: center;
             align-items: center;
         }
+
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -30,22 +31,27 @@
             position: absolute;
             top: 0;
         }
+
         .navbar .logo {
             font-size: 20px;
             font-weight: bold;
         }
+
         .navbar .nav-links {
             display: flex;
             gap: 15px;
         }
+
         .navbar .nav-links a {
             color: #1d1d1f;
             text-decoration: none;
             font-size: 16px;
         }
+
         .navbar .nav-links a:hover {
             text-decoration: underline;
         }
+
         /* Main content frame with border */
         .main-content {
             width: 80%;
@@ -55,6 +61,7 @@
             background-color: rgba(245, 245, 247, 0.4); /* Slight transparency for the background */
             text-align: center;
         }
+
         .button {
             display: inline-block;
             padding: 10px 20px;
@@ -67,8 +74,43 @@
             cursor: pointer;
             text-decoration: none;
         }
+
         .button:hover {
             background-color: #006e12;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .navbar .logo {
+                font-size: 18px;
+            }
+            .navbar .nav-links a {
+                font-size: 14px;
+            }
+            .main-content {
+                width: 90%;
+                padding: 20px;
+            }
+            .button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .navbar .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            .main-content {
+                width: 95%;
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -90,3 +132,4 @@
     </div>
 </body>
 </html>
+
