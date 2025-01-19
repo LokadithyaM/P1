@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="">
     <title>ITTER.INDEX</title>
     <style>
         body {
@@ -10,15 +10,25 @@
             padding: 0;
             font-family: Arial, sans-serif;
             box-sizing: border-box;
+            background-image: url('app/static/rin.jpg'); /* Placeholder image URL */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background-color: #f5f5f7;
+            background-color: rgba(245, 245, 247, 0.5);
             color: hwb(0 0% 100%);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: absolute;
+            top: 0;
         }
         .navbar .logo {
             font-size: 20px;
@@ -36,14 +46,13 @@
         .navbar .nav-links a:hover {
             text-decoration: underline;
         }
-        .container {
+        /* Main content frame with border */
+        .main-content {
             width: 80%;
             max-width: 1200px;
-            margin: 140px auto;
-            border: 2px solid black;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #f9f9f9;
+            padding: 30px;
+            box-shadow: -13px 14px 12px 8px rgba(0, 0, 0, 0.1);
+            background-color: rgba(245, 245, 247, 0.4); /* Slight transparency for the background */
             text-align: center;
         }
         .button {
@@ -52,14 +61,14 @@
             margin-top: 20px;
             font-size: 16px;
             color: #fff;
-            background-color: #007bff;
+            background-color: #343435;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             text-decoration: none;
         }
         .button:hover {
-            background-color: #0056b3;
+            background-color: #006e12;
         }
     </style>
 </head>
@@ -72,7 +81,9 @@
             <a href="#">Creators</a>
         </div>
     </div>
-    <div class="container">
+
+    <!-- Main content wrapped in a frame -->
+    <div class="main-content">
         <h1>Welcome to ITTER</h1>
         <p>This is the index page. Start exploring the project here.</p>
         <a href="/" class="button">Go to Home Page</a>
