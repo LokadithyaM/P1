@@ -3,21 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index - My Flask App</title>
+    <title>ITTER.INDEX</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            box-sizing: border-box;
             font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f5f5f7;
+            color: hwb(0 0% 100%);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .navbar .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar .nav-links a {
+            color: #1d1d1f;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .navbar .nav-links a:hover {
+            text-decoration: underline;
         }
         .container {
             width: 80%;
             max-width: 1200px;
+            margin: 140px auto;
             border: 2px solid black;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -42,8 +64,16 @@
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <div class="logo">ITTER</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Creators</a>
+        </div>
+    </div>
     <div class="container">
-        <h1>Welcome to My Flask App</h1>
+        <h1>Welcome to ITTER</h1>
         <p>This is the index page. Start exploring the project here.</p>
         <a href="/" class="button">Go to Home Page</a>
     </div>
