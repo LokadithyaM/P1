@@ -13,3 +13,8 @@ model of user interaction
 that should be the model1 of a high level overview on how it is going to work.
 setting up techniques would mean i want to use flask application for this and then use git pages or railways for hosting.
 okay lets begin then.
+
+just set up my basic outlook the first deployment 
+-using railways for development
+this is how the first look of the website is
+![image](https://github.com/user-attachments/assets/e8ec412c-214e-4b32-a422-f1844fcb4258)
