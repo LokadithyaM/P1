@@ -10,59 +10,52 @@
             padding: 0;
             font-family: Arial, sans-serif;
             box-sizing: border-box;
-            background-image: url('/static/rin.jpg'); /* Correct image path */
+            background-image: url('/static/rin.jpg'); /* Placeholder image URL */
             background-size: cover;
             background-position: center;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
         }
-
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 30px;
-            background-color: rgba(245, 245, 247, 0.4);
+            padding: 10px 20px;
+            background-color: rgba(245, 245, 247, 0.5);
             color: hwb(0 0% 100%);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
             position: absolute;
             top: 0;
+            z-index: 1000; /* Ensure navbar stays on top */
         }
-
         .navbar .logo {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
         }
-
         .navbar .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
-
         .navbar .nav-links a {
             color: #1d1d1f;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
         }
-
         .navbar .nav-links a:hover {
             text-decoration: underline;
         }
-
         /* Main content frame with border */
         .main-content {
-            width: 90%;
+            width: 80%;
             max-width: 1200px;
-            padding: 20px;
+            padding: 30px;
             box-shadow: -13px 14px 12px 8px rgba(0, 0, 0, 0.1);
             background-color: rgba(245, 245, 247, 0.4); /* Slight transparency for the background */
             text-align: center;
         }
-
         .button {
             display: inline-block;
             padding: 10px 20px;
@@ -75,76 +68,39 @@
             cursor: pointer;
             text-decoration: none;
         }
-
         .button:hover {
             background-color: #006e12;
         }
-
-        /* Media Queries for Responsive Design */
-        /* For medium-sized screens (tablets and below) */
-        @media (max-width: 1024px) {
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
             .navbar {
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 10px 20px;
+                padding: 15px;
             }
-
             .navbar .nav-links {
                 flex-direction: column;
                 gap: 10px;
+                width: 100%;
+                text-align: left;
+                margin-top: 10px;
             }
-
+            .navbar .nav-links a {
+                font-size: 18px;
+                padding: 10px;
+                width: 100%;
+                text-align: left;
+            }
             .main-content {
-                width: 95%;
+                width: 90%;
                 padding: 20px;
             }
         }
 
-        /* For small screens (phones) */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 10px 20px;
-            }
-
+        @media screen and (max-width: 480px) {
             .navbar .logo {
                 font-size: 18px;
             }
-
-            .navbar .nav-links {
-                gap: 15px;
-            }
-
-            .main-content {
-                width: 90%;
-                padding: 15px;
-            }
-
-            .button {
-                font-size: 14px;
-                padding: 8px 16px;
-            }
-        }
-
-        /* For extra small screens (very small phones) */
-        @media (max-width: 480px) {
-            .navbar {
-                padding: 10px;
-            }
-
-            .navbar .logo {
-                font-size: 16px;
-            }
-
-            .navbar .nav-links {
-                gap: 10px;
-                font-size: 14px;
-            }
-
-            .main-content {
-                width: 90%;
-                padding: 10px;
-            }
-
             .button {
                 font-size: 14px;
                 padding: 8px 16px;
@@ -169,5 +125,7 @@
         <a href="/" class="button">Go to Home Page</a>
     </div>
 </body>
+</html>
+
 </html>
 
