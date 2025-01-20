@@ -31,3 +31,12 @@ and then adding an image to that it should look a bit better so
 
 that should now let me add in fileds for user to sgin-in/log-in enter mail and password should be fine.
 
+okay now lets begin with the next page i am thinking of a simple page with two options one would be sign-in if the user isn't identified then take user to the new login page
+-user email
+-password
+if already known
+if new 
+-user email
+-password
+-confirm password
+
