@@ -40,3 +40,13 @@ if new
 -password
 -confirm password
 
+![image](https://github.com/user-attachments/assets/18bad464-b481-42fa-a950-6924c2e41598)
+![image](https://github.com/user-attachments/assets/58de775b-4b0a-4dfc-ad75-b5e87ce50f2f)
+![image](https://github.com/user-attachments/assets/ec61382e-df5c-4a1b-8b3b-2291d05994ba)
+that should be my current standing now i will go to the models section to start working on the database maintainance so i can assign each user their own instance and yeah maintain overall transparacny for
+-data storage
+-user validation
+-new registration
+
+
+
