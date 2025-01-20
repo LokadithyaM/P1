@@ -1,18 +1,11 @@
-from flask import Flask
-from .models import db  # Import the db object
-from .routes import bp  # Import your blueprint
+from app import create_app
+from app.models import db  # Import the db from models
 
-def create_app():
-    app = Flask(__name__)
+app = create_app()
 
-    # Configuration (Make sure this is present)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///your_database.db'  # SQLite for local development
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Disable modification tracking
-    app.secret_key = 'your_secret_key'
+# This will create the tables in the database
+with app.app_context():
+    db.create_all()  # Create all tables (this is required the first time you run the app)
 
-    db.init_app(app)  # Initialize the database with the app
-
-    # Register blueprint
-    app.register_blueprint(bp)
-
-    return app
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000, debug=True)  # This will run the Flask app in development mode
