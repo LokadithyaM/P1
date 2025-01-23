@@ -51,4 +51,4 @@ that should be my current standing now i will go to the models section to start 
 added a databse checks are looking good now i can go ahead to develop the application in this increment now it looks like i would have to implement user aspects and how the landing page looks like etc eeha.
 still a bit rough flash images though so got to work on that gui to so.
 
-
+okay the first level building is done with some rough edges though now second stage plan ahs to thought out.
