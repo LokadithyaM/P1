@@ -52,3 +52,11 @@ added a databse checks are looking good now i can go ahead to develop the applic
 still a bit rough flash images though so got to work on that gui to so.
 
 okay the first level building is done with some rough edges though now second stage plan ahs to thought out.
+![image](https://github.com/user-attachments/assets/80edf80f-f2ed-44ea-8afa-4a01b8945378)
+
+that would be the simple model for now the functions include
+- update status on goals
+- add/remove goals
+- record daily progress
+
+there are few more features i want but for now it should be the core features.
