@@ -60,3 +60,8 @@ that would be the simple model for now the functions include
 - record daily progress
 
 there are few more features i want but for now it should be the core features.
+
+![image](https://github.com/user-attachments/assets/38021bd5-d484-4cc1-8a98-759da2dcda41)
+
+alright how its looking for now though its a dead veresion still i didn't add life to it for now i belive thats would be the over all how the strucutre will look like ofcourse theme and and one two features are to 
+added here and there that would be the users default profile page. And to add life to it is the main priroity in mind right now rest of the features i will add them as the come.
