@@ -31,12 +31,16 @@ def login():
             login_user(user)  # Log in the user using Flask-Login
             
             flash('Login successful!', 'success')
-            return redirect(url_for('main.index'))  # Redirect to home page
+            return redirect(url_for('main.personal'))  # Redirect to home page
 
         flash('Invalid credentials. Please try again.', 'danger')
         return redirect(url_for('main.login'))  # Redirect back to login page
     
     return render_template('login.html')
+
+@bp.route('/personal.html')
+def personal():
+    return render_template('personal.html')
 
 @bp.route('/signup', methods=['GET', 'POST'])
 def signup():
