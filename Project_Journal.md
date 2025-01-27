@@ -65,3 +65,8 @@ there are few more features i want but for now it should be the core features.
 
 alright how its looking for now though its a dead veresion still i didn't add life to it for now i belive thats would be the over all how the strucutre will look like ofcourse theme and and one two features are to 
 added here and there that would be the users default profile page. And to add life to it is the main priroity in mind right now rest of the features i will add them as the come.
+
+![image](https://github.com/user-attachments/assets/d94e6228-2627-4537-93bf-0a4e98f36d5c)
+
+kind of have changed a few things now umm i want to track those put on active and the reflections made.(these would be analyzed to make suggestions)
+and wait i will update the heat map js
