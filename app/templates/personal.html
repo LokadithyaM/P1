@@ -11,7 +11,7 @@
             padding: 0;
             font-family: Arial, sans-serif;
             box-sizing: border-box;
-            background-image: url('/static/rin.jpg'); /* Placeholder image URL */
+            background-image: url('/static/rin.jpg');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -19,6 +19,8 @@
             flex-direction: column; /* Arrange layout vertically */
             align-items: center; /* Align items to the left */
             background-repeat: no-repeat;
+            background-color: #9bd39a;
+            background-repeat: repeat;
         }
 
         /* Navbar Styling */
@@ -72,6 +74,8 @@
             width: 100%; /* Take full width of the parent */
             max-width: 1200px; /* Optional: Limit max width for larger screens */
             box-sizing: border-box; /* Ensure padding is part of total width/height */
+            background-color: #9cac95;
+            border-radius: 1%;
         }
 
         /* Media query for larger screens */
@@ -83,45 +87,13 @@
 
         /* Profile Card Styling */
         .profile-card {
-            background-color: #1e1e1e;
+            background-color: #1b4d1d;
             width: 500px;
-            /* height: 250; */
             border-radius: 10px;
             padding: 20px;
-            text-align: center;
+            text-align: left;  /* Left-aligned text */
             color: white;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-        .profile-photo {
-            position: relative;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 2px solid #facc15;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            background-color: #2d2d2d;
-            margin: 0 auto 10px;
-            cursor: pointer;
-        }
-        .profile-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: none; /* Initially hidden until an image is added */
-        }
-        .profile-photo span {
-            position: absolute;
-            color: #ffffff;
-            font-size: 12px;
-            text-align: center;
-            width: 100%;
-            pointer-events: none;
-        }
-        input[type="file"] {
-            display: none;
         }
 
                 /* Editable Name */
@@ -144,8 +116,9 @@
             border-radius: 10px;
             background-color: #f9f9f9;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            overflow-y: auto;
             max-height: 300px; /* Limit height and enable scrolling */
+            overflow: scroll;
+            
         }
         .goal {
             display: flex;
@@ -221,7 +194,7 @@
             border-radius: 4px;
         }
         .heatmap-block.low {
-            background-color: #9ef5af; /* Light Green: low activity */
+            background-color: #000000; /* Light Green: low activity */
         }
         .heatmap-block.medium {
             background-color: #34e42e; /* Yellow: medium activity */
@@ -290,17 +263,20 @@
 
     <!-- Layout Container -->
     <div class="layout-container">
-        <!-- Profile Card -->
-        <div class="profile-card">
-            <label class="profile-photo">
-                <input type="file" accept="image/*" id="imageUpload">
-                <img id="profileImage">
-                <span>+ Add Photo</span>
-            </label>
-            <h2>M Lokadithya</h2>
-            <p>@Lokadithya_M</p>
-            <p>A bottomless abyss</p>
-        </div>
+       <!-- Profile Card -->
+    <!-- Profile Card -->
+    <div class="profile-card">
+        <!-- Name -->
+        <h2 contenteditable="true">Your Name</h2>
+
+        <!-- Reminder (Motivational Quote) -->
+        <p contenteditable="true" class="quote">"A simple quote."</p>
+
+        <!-- Who Are You -->
+        <h3>GOAL:</h3>
+        <p contenteditable="true">Enter your goal here and edit your daily tasks on the left.....</p>
+    </div>
+
 
         <div class="goals-container" id="goals-container">
             <!-- Goals will be dynamically added here -->
@@ -341,8 +317,8 @@
             </div>
         </div>
 
-        <div class="write-section"style="height: 200px";>
-            <textarea class="write-area" placeholder="What did you work with, How did it feel?, Where can you improve?..."></textarea>
+        <div class="write-section"style="height: 1200px";>
+            <textarea class="write-area" placeholder="What did you work with, How did it feel?, Where can you improve?..."style="height=1200px;height: 1150px;"></textarea>
             <button class="post-button">Post</button>
         </div>
         
@@ -351,7 +327,7 @@
     <!-- Heatmap Script -->
     <script>
         const activityData = [
-            0, 1, 2, 0, 5, 6, 3, 0, 1, 0, 0, 2, 3, 0, 4, 6, 7, 1, 3, 0, 2, 4, 5, 6, 0, 1, 0, 4, 2, 3
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
         ];
 
         function generateHeatmap(containerId, activityData) {
@@ -378,35 +354,40 @@
         const goals = [
             { text: "Complete project", status: "active" },
             { text: "Study algorithms", status: "inactive" },
-            { text: "Read books", status: "killed" },
+            { text: "Read books", status: "inactive" },
             { text: "Workout", status: "active" },
             { text: "Learn new tech", status: "inactive" },
-            { text: "Travel", status: "active" }
-            
+            { text: "Travel", status: "active" },
         ];
-
+    
         function sortAndRenderGoals() {
             // Sort goals by status
             goals.sort((a, b) => {
-                const statusOrder = { active: 1, inactive: 2, killed: 3 };
+                const statusOrder = { active: 1, inactive: 2 };
                 return statusOrder[a.status] - statusOrder[b.status];
             });
-
-            // Render only top 5 goals, rest scrollable
+    
+            // Render only top 4 goals
             goalsContainer.innerHTML = "";
-            goals.slice(0, 5).forEach(({ text, status }) => addGoal(text, status));
+            goals.slice(0, 4).forEach(({ text, status }) => addGoal(text, status));
+            
+            // Add scrollable container for the remaining goals
+            const scrollableDiv = document.createElement('div');
+            scrollableDiv.className = 'scrollable-goals';
+            goals.slice(4).forEach(({ text, status }) => addGoalToScrollable(text, status, scrollableDiv));
+            goalsContainer.appendChild(scrollableDiv);
         }
-
+    
         function addGoal(text = "", status = "active") {
             const goalDiv = document.createElement('div');
             goalDiv.className = 'goal';
-
+    
             const goalInput = document.createElement('input');
             goalInput.type = 'text';
             goalInput.value = text;
-
+    
             const goalSelect = document.createElement('select');
-            const statuses = ["active", "inactive", "killed"];
+            const statuses = ["active", "inactive"];
             statuses.forEach(st => {
                 const option = document.createElement('option');
                 option.value = st;
@@ -414,14 +395,38 @@
                 if (st === status) option.selected = true;
                 goalSelect.appendChild(option);
             });
-
+    
             goalDiv.appendChild(goalInput);
             goalDiv.appendChild(goalSelect);
             goalsContainer.appendChild(goalDiv);
         }
-
+    
+        function addGoalToScrollable(text = "", status = "active", container) {
+            const goalDiv = document.createElement('div');
+            goalDiv.className = 'goal';
+    
+            const goalInput = document.createElement('input');
+            goalInput.type = 'text';
+            goalInput.value = text;
+    
+            const goalSelect = document.createElement('select');
+            const statuses = ["active", "inactive"];
+            statuses.forEach(st => {
+                const option = document.createElement('option');
+                option.value = st;
+                option.textContent = st.charAt(0).toUpperCase() + st.slice(1);
+                if (st === status) option.selected = true;
+                goalSelect.appendChild(option);
+            });
+    
+            goalDiv.appendChild(goalInput);
+            goalDiv.appendChild(goalSelect);
+            container.appendChild(goalDiv);
+        }
+    
         // Initialize and Render Goals
         sortAndRenderGoals();
     </script>
+    
 </body>
 </html>
