@@ -36,7 +36,7 @@
             background-color: #f5f5f5; /* Light background for readability */
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            width: 400px; /* Max width for better layout */
+            max-width: 400px; /* Max width for better layout */
             position: absolute; /* Position relative to nearest positioned ancestor */
             top: 30px; /* 30px from the top of the container */
             left: 30px; /* 30px from the left of the container */
@@ -79,6 +79,7 @@
 
         /* Navbar Styling */
         .navbar {
+            /* position: relative; */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -141,12 +142,12 @@
 
         /* Profile Card Styling */
         .profile-card {
-            background-color: #1b4d1d;
+            background-color: #ffffff;
             width: 500px;
             border-radius: 10px;
             padding: 20px;
-            text-align: left;  /* Left-aligned text */
-            color: white;
+            text-align: center;  /* Left-aligned text */
+            color: rgb(0, 0, 0);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
@@ -318,7 +319,7 @@
     <div class="main">
         <form method="POST" action="{{ url_for('main.personal') }}">
 
-            <div class="flex-layout"style="padding-left: 500px;">
+            <div class="flex-layout"style="padding-left: 400px;">
                 <div class="layout-container">
                     <!-- Profile Card -->
                     <div class="profile-card">
@@ -372,7 +373,7 @@
     </div>
 
             <!-- Displaying all past reflections -->
-            <div class="past-reflections" style= "margin-top: 90px;"">
+            <div class="past-reflections" style= "margin-top: 90px; height: 1800px;">
                 <h2>Your Past Reflections</h2>
                 {% for post in user.posts %}
                     <div class="reflection">
@@ -499,5 +500,7 @@
         });
     </script>
 </body>
+</html>
+
 </html>
 
