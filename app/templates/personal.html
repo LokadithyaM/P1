@@ -251,7 +251,6 @@
     </style>
 </head>
 <body>
-    <!-- Navbar -->
     <div class="navbar">
         <div class="logo">ITTER</div>
         <div class="nav-links">
@@ -262,67 +261,76 @@
     </div>
 
     <!-- Layout Container -->
-    <div class="layout-container">
-       <!-- Profile Card -->
-    <!-- Profile Card -->
-    <div class="profile-card">
-        <!-- Name -->
-        <h2 contenteditable="true">Your Name</h2>
+    <form method="POST" action="{{ url_for('main.personal') }}">
+        <div class="layout-container">
+            <!-- Profile Card -->
+            <div class="profile-card">
+                <!-- Name -->
+                <h2 contenteditable="true" id="name" class="editable">{{ user.name or "Your Name" }}</h2>
+                <input type="hidden" name="name" id="name-input">
+                
+                <!-- Reminder (Motivational Quote) -->
+                <p contenteditable="true" id="quote" class="editable">{{ user.quote or '"A simple quote."' }}</p>
+                <input type="hidden" name="quote" id="quote-input">
 
-        <!-- Reminder (Motivational Quote) -->
-        <p contenteditable="true" class="quote">"A simple quote."</p>
+                <!-- Goal -->
+                <h3>GOAL:</h3>
+                <p contenteditable="true" id="goal" class="editable">{{ goal or "Enter your goal here and edit your daily tasks on the left....." }}</p>
+                <input type="hidden" name="goal" id="goal-input">
+            </div>
 
-        <!-- Who Are You -->
-        <h3>GOAL:</h3>
-        <p contenteditable="true">Enter your goal here and edit your daily tasks on the left.....</p>
-    </div>
-
-
-        <div class="goals-container" id="goals-container">
-            <!-- Goals will be dynamically added here -->
-        </div>
-    </div>
-    <div class="flex-layout">
-        <div class="global-container">
-            <!-- Individual heatmap wrappers -->
-            <div class="heatmap-wrapper">
-                <div id="heatmap-container-1" class="heatmap-container">
-                    <!-- Heatmap will be generated dynamically here -->
-                </div>
-            </div>
-            <div class="heatmap-wrapper">
-                <div id="heatmap-container-2" class="heatmap-container">
-                    <!-- Heatmap will be generated dynamically here -->
-                </div>
-            </div>
-            <div class="heatmap-wrapper">
-                <div id="heatmap-container-3" class="heatmap-container">
-                    <!-- Heatmap will be generated dynamically here -->
-                </div>
-            </div>
-            <div class="heatmap-wrapper">
-                <div id="heatmap-container-4" class="heatmap-container">
-                    <!-- Heatmap will be generated dynamically here -->
-                </div>
-            </div>
-            <div class="heatmap-wrapper">
-                <div id="heatmap-container-5" class="heatmap-container">
-                    <!-- Heatmap will be generated dynamically here -->
-                </div>
-            </div>
-            <div class="heatmap-wrapper">
-                <div id="heatmap-container-6" class="heatmap-container">
-                    <!-- Heatmap will be generated dynamically here -->
-                </div>
+            <!-- Heatmap Containers -->
+            <div class="goals-container" id="goals-container">
+                <!-- Goals will be dynamically added here -->
             </div>
         </div>
 
-        <div class="write-section"style="height: 1200px";>
-            <textarea class="write-area" placeholder="What did you work with, How did it feel?, Where can you improve?..."style="height=1200px;height: 1150px;"></textarea>
-            <button class="post-button">Post</button>
+        <div class="flex-layout">
+            <div class="global-container">
+                <!-- Heatmap Wrappers -->
+                <div class="heatmap-wrapper">
+                    <div id="heatmap-container-1" class="heatmap-container"></div>
+                </div>
+                <div class="heatmap-wrapper">
+                    <div id="heatmap-container-2" class="heatmap-container"></div>
+                </div>
+                <div class="heatmap-wrapper">
+                    <div id="heatmap-container-3" class="heatmap-container"></div>
+                </div>
+                <div class="heatmap-wrapper">
+                    <div id="heatmap-container-4" class="heatmap-container"></div>
+                </div>
+                <div class="heatmap-wrapper">
+                    <div id="heatmap-container-5" class="heatmap-container"></div>
+                </div>
+                <div class="heatmap-wrapper">
+                    <div id="heatmap-container-6" class="heatmap-container"></div>
+                </div>
+            </div>
+
+            <div class="write-section" style="height: 1200px;">
+                <textarea class="write-area" placeholder="What did you work with, How did it feel?, Where can you improve?" name="reflection" style="height: 1150px;">{{ reflection or "" }}</textarea>
+                <button class="post-button" type="submit">Post</button>
+            </div>
         </div>
-        
+    </form>
+
+
+    <h2>Your Past Reflections</h2>
+
+    <!-- Displaying all past reflections -->
+    <div class="past-reflections">
+        {% for post in user.posts %}
+            <div class="reflection">
+                <p><strong>Reflection {{ loop.index }}:</strong></p>
+                <p>{{ post.reflection }}</p>
+                <p><em>Posted on {{ post.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</em></p>
+            </div>
+        {% else %}
+            <p>No reflections posted yet.</p>
+        {% endfor %}
     </div>
+
 
     <!-- Heatmap Script -->
     <script>
@@ -347,8 +355,8 @@
         }
     </script>
 
-     <!-- Heatmap Script -->
-     <script>
+    <!-- Goals Script -->
+    <script>
         const goalsContainer = document.getElementById('goals-container');
         
         const goals = [
@@ -427,6 +435,14 @@
         // Initialize and Render Goals
         sortAndRenderGoals();
     </script>
-    
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            // Sync contenteditable fields with hidden inputs
+            document.getElementById("name-input").value = document.getElementById("name").innerText;
+            document.getElementById("quote-input").value = document.getElementById("quote").innerText;
+            document.getElementById("goal-input").value = document.getElementById("goal").innerText;
+        });
+    </script>
 </body>
 </html>
