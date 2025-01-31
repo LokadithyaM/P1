@@ -70,3 +70,19 @@ added here and there that would be the users default profile page. And to add li
 
 kind of have changed a few things now umm i want to track those put on active and the reflections made.(these would be analyzed to make suggestions)
 and wait i will update the heat map js
+
+well i didn't work on heat map yet but in this increment i have put in all these things 
+- each user sessions are independent now
+- user name, goal, reflections are stored and shown
+- gui is looking much better added in past reflections section too
+have a look
+
+![image](https://github.com/user-attachments/assets/a14262a4-b3a8-4588-b84f-be088c916630)
+
+thats how with content its looking good i guess
+things to focus on in the next increment
+- heatmap js
+- log out
+- past reflections close and open
+- detailed past reflections
+- integration and analysis of gemini to suggest insights (this might be post poned to next increment.
