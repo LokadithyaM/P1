@@ -86,3 +86,5 @@ things to focus on in the next increment
 - past reflections close and open
 - detailed past reflections
 - integration and analysis of gemini to suggest insights (this might be post poned to next increment.
+
+building on this i have migrated the production development into a more sleeker and better performing website itnegarting websockets for real time cocmmuncation ebtween firedns adding progress tracking gemini integeration for personalized insghts and so on.
