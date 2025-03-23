@@ -81,5 +81,5 @@ MIT License
 ---
 
 **Author:** Lokadithya M  
-**Status:** Active Development
+**Status:** migrated to https://github.com/LokadithyaM/Awake
 
