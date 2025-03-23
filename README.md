@@ -1,94 +1,85 @@
-Itter
+# Itter
 
-Itter is a multipurpose platform designed to help users record their progress, share thoughts, capture moments, and accomplish goals. It combines real-time interaction with goal tracking and AI-driven insights.
+Itter is a multipurpose platform designed to help users **record their progress, share thoughts, capture moments, and accomplish goals**. It combines real-time interaction with goal tracking and AI-driven insights.
 
-Features
+## Features
 
-User Authentication
+- **User Authentication**
+  - Sign-in/Sign-up functionality
+  - Independent user sessions
+  - Secure password management
 
-Sign-in/Sign-up functionality
+- **Goal Tracking & Management**
+  - Add/remove goals
+  - Update progress status
+  - Daily progress recording
+  
+- **Reflections & Insights**
+  - Store and view past reflections
+  - AI-generated insights (Gemini integration - upcoming)
 
-Independent user sessions
+- **Real-time Communication**
+  - WebSockets for live updates
+  - Heatmap.js for visual engagement tracking (planned)
 
-Secure password management
+## Tech Stack
 
-Goal Tracking & Management
+- **Backend:** Flask (Python)
+- **Frontend:** HTML, CSS, JavaScript
+- **Database:** PostgreSQL / SQLite
+- **Hosting:** Railway / GitHub Pages
+- **Real-Time:** WebSockets
+- **AI Integration:** Gemini API (future increment)
 
-Add/remove goals
+## Installation & Setup
 
-Update progress status
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/yourusername/itter.git
+   cd itter
+   ```
 
-Daily progress recording
+2. **Create a virtual environment & install dependencies:**
+   ```sh
+   python3 -m venv venv
+   source venv/bin/activate   # On Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
 
-Reflections & Insights
+3. **Run the Flask application:**
+   ```sh
+   flask run
+   ```
 
-Store and view past reflections
+4. **Access the app in your browser:**
+   ```
+   http://127.0.0.1:5000/
+   ```
 
-AI-generated insights (Gemini integration - upcoming)
-
-Real-time Communication
-
-WebSockets for live updates
-
-Heatmap.js for visual engagement tracking (planned)
-
-Tech Stack
-
-Backend: Flask (Python)
-
-Frontend: HTML, CSS, JavaScript
-
-Database: PostgreSQL / SQLite
-
-Hosting: Railway / GitHub Pages
-
-Real-Time: WebSockets
-
-AI Integration: Gemini API (future increment)
-
-Installation & Setup
-
-Clone the repository:
-
-git clone https://github.com/yourusername/itter.git
-cd itter
-
-Create a virtual environment & install dependencies:
-
-python3 -m venv venv
-source venv/bin/activate   # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-
-Run the Flask application:
-
-flask run
-
-Access the app in your browser:
-
-http://127.0.0.1:5000/
-
-Deployment
+## Deployment
 
 The app is hosted on Railway and can be deployed by pushing changes to the repository. For production:
 
+```sh
 git push origin main
+```
 
-Upcoming Features
+## Upcoming Features
+- **Heatmap.js for user activity visualization**
+- **Logout functionality**
+- **Enhanced past reflections with detailed views**
+- **AI-powered personalized insights**
 
-Heatmap.js for user activity visualization
+---
 
-Logout functionality
-
-Enhanced past reflections with detailed views
-
-AI-powered personalized insights
-
-Contributing
-
+### **Contributing**
 Pull requests are welcome. For major changes, please open an issue first to discuss.
 
-License
-
+### **License**
 MIT License
 
-Author: Lokadithya MStatus: migrated to http://github.com/LokadithyaM/Awake
+---
+
+**Author:** Lokadithya M  
+**Status:** Active Development
+
